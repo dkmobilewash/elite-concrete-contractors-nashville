@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --color-navy: #0e2748;
+  --color-navy-dark: #081a32;
+  --color-navy-light: #1c3a63;
+  --color-charcoal: #55575b;
+  --color-charcoal-dark: #3a3c40;
+  --color-off-white: #f7f8f9;
+  --color-hairline: #c7cad0;
+
+  --background: #ffffff;
+  --foreground: #1c1d1f;
+}
+
+@theme inline {
+  --color-navy: var(--color-navy);
+  --color-navy-dark: var(--color-navy-dark);
+  --color-navy-light: var(--color-navy-light);
+  --color-charcoal: var(--color-charcoal);
+  --color-charcoal-dark: var(--color-charcoal-dark);
+  --color-off-white: var(--color-off-white);
+  --color-hairline: var(--color-hairline);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-heading: var(--font-barlow), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--font-heading);
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--color-hairline) 20%, var(--color-hairline) 80%, transparent);
+}
+
+.section-y {
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(3rem, 6vw, 6rem);
+}
