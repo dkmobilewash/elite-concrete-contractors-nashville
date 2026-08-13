@@ -1,21 +1,21 @@
-import type { Metadata } from "next";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import WhyChoose from "@/components/WhyChoose";
 import { siteConfig, NOTE_PLACEHOLDER_STATS } from "@/lib/site-config";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About Us",
   description:
     "Elite Concrete Contractors Of Nashville is a premium concrete contractor serving Nashville's finest residential and commercial properties with precision craftsmanship and meticulous project management.",
-  alternates: { canonical: "/about/" },
-};
+  path: "/about/",
+});
 
 export default function AboutPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} />
+      <PageBreadcrumbs items={[{ name: "Home", href: "/" }, { name: "About" }]} currentPath="/about/" />
       <section className="bg-[var(--color-navy)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="font-heading text-4xl sm:text-5xl font-bold">About Elite Concrete Contractors Of Nashville</h1>

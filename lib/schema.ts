@@ -1,4 +1,4 @@
-import { siteConfig } from "./site-config";
+import { siteConfig, realReviewData } from "./site-config";
 import { areas } from "@/data/areas";
 import { Service } from "./types";
 import { Area } from "./types";
@@ -39,6 +39,17 @@ export function organizationSchema() {
       "@type": "City",
       name: `${a.name}, TN`,
     })),
+    // Only emitted once real review data is set in lib/site-config.ts —
+    // never fabricated. See realReviewData for how to activate this.
+    ...(realReviewData
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: realReviewData.ratingValue,
+            reviewCount: realReviewData.reviewCount,
+          },
+        }
+      : {}),
   };
 }
 

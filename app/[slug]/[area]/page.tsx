@@ -5,6 +5,7 @@ import { areas } from "@/data/areas";
 import ComboPageTemplate from "@/components/ComboPageTemplate";
 import { getComboContent } from "@/lib/combo-content";
 import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   const params: { slug: string; area: string }[] = [];
@@ -27,11 +28,11 @@ export async function generateMetadata({
   if (!service || !area) return {};
 
   const content = getComboContent(service, area);
-  return {
+  return pageMetadata({
     title: `${service.name} in ${area.name}, TN`,
     description: content.metaDescription,
-    alternates: { canonical: `/${service.slug}/${area.slug}/` },
-  };
+    path: `/${service.slug}/${area.slug}/`,
+  });
 }
 
 export default async function ComboPage({

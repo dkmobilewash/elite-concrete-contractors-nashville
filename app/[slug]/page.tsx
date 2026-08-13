@@ -5,6 +5,7 @@ import { areas } from "@/data/areas";
 import ServicePageTemplate from "@/components/ServicePageTemplate";
 import AreaPageTemplate from "@/components/AreaPageTemplate";
 import { serviceSchema, faqSchema, breadcrumbSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateStaticParams() {
   return [...services.map((s) => ({ slug: s.slug })), ...areas.map((a) => ({ slug: a.slug }))];
@@ -18,19 +19,19 @@ export async function generateMetadata({
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (service) {
-    return {
+    return pageMetadata({
       title: service.name,
       description: `${service.shortDescription} Serving the Nashville metro area with precision craftsmanship. Call (615) 392-4035.`,
-      alternates: { canonical: `/${service.slug}/` },
-    };
+      path: `/${service.slug}/`,
+    });
   }
   const area = areas.find((a) => a.slug === slug);
   if (area) {
-    return {
+    return pageMetadata({
       title: `Concrete Contractor in ${area.name}, TN`,
       description: `Elite Concrete Contractors Of Nashville serves ${area.name}, TN with precision driveways, stamped concrete, retaining walls, and more. Request a consultation today.`,
-      alternates: { canonical: `/${area.slug}/` },
-    };
+      path: `/${area.slug}/`,
+    });
   }
   return {};
 }

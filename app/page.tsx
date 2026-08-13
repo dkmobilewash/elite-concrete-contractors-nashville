@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import ServiceGrid from "@/components/ServiceGrid";
@@ -12,13 +11,14 @@ import CTASection from "@/components/CTASection";
 import { services } from "@/data/services";
 import { areas } from "@/data/areas";
 import { faqSchema } from "@/lib/schema";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Premium Concrete Contractor in Nashville, TN",
   description:
     "Elite Concrete Contractors Of Nashville delivers precision stamped, stained, polished, and structural concrete work for discerning residential and commercial clients across the Nashville metro. Request a consultation today.",
-  alternates: { canonical: "/" },
-};
+  path: "/",
+});
 
 const homeFaqs = [
   {

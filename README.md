@@ -36,6 +36,27 @@ npm run lint
 - **Forms**: `/contact/` posts to `app/api/consultation/route.ts`, which validates input and forwards it to
   `CONSULTATION_WEBHOOK_URL` (any webhook endpoint — Zapier, Make, a transactional email API, a CRM). **Set this
   env var before launch** — without it, submissions are only logged server-side, not delivered anywhere.
+- **Technical SEO hardening**: `next.config.ts` redirects the apex domain to `www` (301/308) and sets security
+  headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, HSTS, Permissions-Policy) sitewide.
+  `lib/seo.ts` (`pageMetadata()`) is the single helper every page's metadata export goes through, so canonical,
+  Open Graph (title/description/url/type/site_name/image), and Twitter Card tags stay consistent automatically.
+  `components/PageBreadcrumbs.tsx` pairs the visible breadcrumb nav with its `BreadcrumbList` JSON-LD so the two
+  can't drift apart. Favicons (`favicon.ico`, 16×16/32×32 PNGs, apple-touch-icon, manifest icons) are static files
+  in `public/`, generated from the same navy "E" mark as the wordmark. `app/not-found.tsx` is a branded 404 page.
+
+### Activating real review data
+
+`lib/site-config.ts` exports `realReviewData`, set to `null` on purpose — `organizationSchema()` in `lib/schema.ts`
+only emits schema.org `aggregateRating` when this is non-null, since fabricating review markup risks a Search
+Console manual action. Once you have real Google numbers, set:
+
+```ts
+export const realReviewData = { ratingValue: 4.9, reviewCount: 187 };
+```
+
+and the homepage `LocalBusiness` schema will start including the rating automatically — no other code changes
+needed. The same real numbers should also replace `NOTE_PLACEHOLDER_STATS.reviewRating` / `reviewCount` (used in
+the visible Reviews page copy, not schema) once available.
 
 ## Open items to confirm with the client (see build spec Section 12)
 

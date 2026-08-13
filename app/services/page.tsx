@@ -1,20 +1,20 @@
-import type { Metadata } from "next";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import ServiceGrid from "@/components/ServiceGrid";
 import CTASection from "@/components/CTASection";
 import { services } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Concrete Services",
   description:
     "Explore Elite Concrete Contractors Of Nashville's full range of concrete services — driveways, stamped concrete, foundations, retaining walls, flooring, and more, serving the Nashville metro area.",
-  alternates: { canonical: "/services/" },
-};
+  path: "/services/",
+});
 
 export default function ServicesPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} />
+      <PageBreadcrumbs items={[{ name: "Home", href: "/" }, { name: "Services" }]} currentPath="/services/" />
       <section className="bg-[var(--color-navy)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="font-heading text-4xl sm:text-5xl font-bold">Concrete Services</h1>

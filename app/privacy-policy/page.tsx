@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import { siteConfig } from "@/lib/site-config";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
   description: "Privacy Policy for Elite Concrete Contractors Of Nashville.",
-  alternates: { canonical: "/privacy-policy/" },
-};
+  path: "/privacy-policy/",
+});
 
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Privacy Policy" }]} />
+      <PageBreadcrumbs items={[{ name: "Home", href: "/" }, { name: "Privacy Policy" }]} currentPath="/privacy-policy/" />
       <section className="section-y">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 prose-legal">
           <h1 className="font-heading text-3xl sm:text-4xl font-bold text-[var(--color-navy)]">Privacy Policy</h1>

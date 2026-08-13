@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import ContactForm from "@/components/ContactForm";
 import { siteConfig } from "@/lib/site-config";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us / Request a Consultation",
   description:
     "Request a consultation with Elite Concrete Contractors Of Nashville. Call (615) 392-4035 or fill out our project form to schedule a design consultation for your Nashville-area concrete project.",
-  alternates: { canonical: "/contact/" },
-};
+  path: "/contact/",
+});
 
 export default function ContactPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact" }]} />
+      <PageBreadcrumbs items={[{ name: "Home", href: "/" }, { name: "Contact" }]} currentPath="/contact/" />
       <section className="bg-[var(--color-navy)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="font-heading text-4xl sm:text-5xl font-bold">Request a Consultation</h1>

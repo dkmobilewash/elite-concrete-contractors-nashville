@@ -42,3 +42,16 @@ export const NOTE_PLACEHOLDER_STATS = {
   reviewCount: "180+",
   yearsExperience: `${new Date().getFullYear() - siteConfig.founded}+`,
 };
+
+/**
+ * Real Google review data, once available. Deliberately `null` until real
+ * numbers are supplied — schema.org `aggregateRating` must reflect actual
+ * review data, and Google can penalize (or Search Console can flag) fabricated
+ * review markup. Set this to real values and `organizationSchema()` in
+ * lib/schema.ts will start emitting `aggregateRating` automatically; nothing
+ * else needs to change.
+ *
+ * Example once real data is available:
+ *   export const realReviewData = { ratingValue: 4.9, reviewCount: 187 };
+ */
+export const realReviewData: { ratingValue: number; reviewCount: number } | null = null;

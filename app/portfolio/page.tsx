@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
 import { services } from "@/data/services";
 import { areas } from "@/data/areas";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Portfolio",
   description:
     "A showcase of Elite Concrete Contractors Of Nashville's featured projects — stamped patios, estate motor courts, polished flooring, and structural work across the Nashville metro area.",
-  alternates: { canonical: "/portfolio/" },
-};
+  path: "/portfolio/",
+});
 
 const featured = [
   { service: services[11], area: areas[0], label: "Stamped Motor Court" },
@@ -24,7 +24,7 @@ const featured = [
 export default function PortfolioPage() {
   return (
     <>
-      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Portfolio" }]} />
+      <PageBreadcrumbs items={[{ name: "Home", href: "/" }, { name: "Portfolio" }]} currentPath="/portfolio/" />
       <section className="bg-[var(--color-navy)] text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="font-heading text-4xl sm:text-5xl font-bold">Featured Projects</h1>

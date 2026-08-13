@@ -1,14 +1,42 @@
+import Image from "next/image";
+
+type PlaceholderImageProps = {
+  label: string;
+  alt: string;
+  aspect?: string;
+  className?: string;
+  /** Real photo, once available. Renders via next/image (automatic WebP/AVIF,
+   *  lazy loading, and CLS-safe sizing) instead of the placeholder box. */
+  src?: string;
+  /** Mark true for the single above-the-fold image on a page (e.g. a hero
+   *  photo) — sets fetchpriority=high and skips lazy-loading, per Core Web
+   *  Vitals guidance for the LCP element. */
+  priority?: boolean;
+};
+
 export default function PlaceholderImage({
   label,
   alt,
   aspect = "aspect-[4/3]",
   className = "",
-}: {
-  label: string;
-  alt: string;
-  aspect?: string;
-  className?: string;
-}) {
+  src,
+  priority = false,
+}: PlaceholderImageProps) {
+  if (src) {
+    return (
+      <div className={`${aspect} ${className} relative overflow-hidden rounded-sm border border-[var(--color-hairline)]`}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          className="object-cover"
+          priority={priority}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       role="img"
