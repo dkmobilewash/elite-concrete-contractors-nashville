@@ -33,9 +33,15 @@ npm run lint
 - **SEO**: `lib/schema.ts` provides LocalBusiness/GeneralContractor, Service, FAQPage, and BreadcrumbList JSON-LD.
   `app/sitemap.ts` and `app/robots.ts` generate `sitemap.xml` / `robots.txt` covering all 196 pages. Every page sets
   a self-referencing canonical via `alternates.canonical`.
-- **Forms**: `/contact/` posts to `app/api/consultation/route.ts`, which validates input and forwards it to
-  `CONSULTATION_WEBHOOK_URL` (any webhook endpoint — Zapier, Make, a transactional email API, a CRM). **Set this
-  env var before launch** — without it, submissions are only logged server-side, not delivered anywhere.
+- **Forms**: `/contact/` posts to `app/api/consultation/route.ts`, which validates input and emails a formatted
+  lead notification via [Resend](https://resend.com). **Set `RESEND_API_KEY` in Vercel → Settings → Environment
+  Variables before launch** — without it, submissions are only logged server-side, not delivered anywhere.
+  Optional env vars: `LEAD_NOTIFICATION_EMAIL` (destination address, defaults to `dc2978757@gmail.com`) and
+  `RESEND_FROM_EMAIL` (defaults to Resend's shared `onboarding@resend.dev` sender, which can only deliver to the
+  email address the Resend account itself was created with — verify a custom domain in Resend and point this at
+  e.g. `leads@eliteconcretecontractorsnashville.com` once ready to send to other inboxes). `CONSULTATION_WEBHOOK_URL`
+  is still supported as an optional secondary integration (e.g. a CRM) and runs alongside the email, not instead
+  of it.
 - **Technical SEO hardening**: `next.config.ts` redirects the apex domain to `www` (301/308) and sets security
   headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy, HSTS, Permissions-Policy) sitewide.
   `lib/seo.ts` (`pageMetadata()`) is the single helper every page's metadata export goes through, so canonical,
