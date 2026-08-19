@@ -15,8 +15,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Belle Meade sits on the rolling terrain west of the Harpeth Hills, with the region's typical mix of shrink-swell clay subsoil and, in places, shallow limestone. Long driveways and motor courts crossing varied grade need engineered base prep and control-joint layout that accounts for both drainage and Middle Tennessee's freeze-thaw cycles — we don't shortcut sub-base compaction here, since a settling driveway on an estate property is a highly visible, expensive mistake to fix later.",
-    distanceFraming: "A short, direct run from our shop on 29th Ave N — typically one of our fastest response times in the metro for consultations and follow-up service.",
-    driveTimeMinutes: "10-15 minutes",
+    distanceFraming: "A cross-town drive from our shop near Nashville International Airport via I-40 West — on the longer end of our service radius, but still comfortably within same-day scheduling for consultations and follow-up service.",
+    driveTimeMinutes: "25-30 minutes",
     localFaqs: [
       {
         question: "Do you work with our landscape architect or designer?",
@@ -47,8 +47,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "The hillside lots common in Forest Hills mean drainage and slope stabilization drive more of the engineering decisions than in flatter parts of the metro. We pay close attention to how surface water moves across a sloped site before we finalize a driveway or retaining wall design, and we design footings and drainage behind walls to handle the region's clay soil and seasonal saturation.",
-    distanceFraming: "A quick, direct trip from our 29th Ave N shop, comparable to our Belle Meade response time.",
-    driveTimeMinutes: "10-15 minutes",
+    distanceFraming: "A cross-town drive from our shop near Nashville International Airport via I-40 West, comparable to our Belle Meade response time.",
+    driveTimeMinutes: "25-30 minutes",
     localFaqs: [
       {
         question: "Can you design around a steep or wooded lot without removing mature trees?",
@@ -79,7 +79,7 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Brentwood sits on Williamson County's typical clay-over-limestone geology, with rolling terrain in the older neighborhoods and engineered pad sites in newer developments. New-construction lots sometimes have inconsistent fill from grading, so we verify sub-base conditions independently rather than assuming a builder's pad is ready for a finish pour.",
-    distanceFraming: "A straightforward drive south from our 29th Ave N shop via I-65 — well within our standard same-day response radius.",
+    distanceFraming: "A straightforward drive from our shop near Nashville International Airport via I-40 and I-440 — well within our standard same-day response radius.",
     driveTimeMinutes: "20-25 minutes",
     localFaqs: [
       {
@@ -111,8 +111,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Green Hills sits in a low-lying basin relative to some surrounding neighborhoods, and older parts of the area can have mature drainage infrastructure that wasn't sized for today's larger hardscape footprints. We evaluate site drainage carefully on tighter urban lots so a new driveway or patio doesn't shift water toward a foundation or a neighboring property.",
-    distanceFraming: "One of our closest service areas — a short trip from our 29th Ave N shop via Hillsboro Pike or 21st Ave.",
-    driveTimeMinutes: "10-15 minutes",
+    distanceFraming: "A direct drive from our shop near Nashville International Airport via I-40 West — within our standard service radius for consultations and follow-up service.",
+    driveTimeMinutes: "20-25 minutes",
     localFaqs: [
       {
         question: "Our lot is small and tightly built — can you still fit a real patio or motor court?",
@@ -143,8 +143,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Williamson County's rolling, clay-based terrain is consistent across Franklin, with the added factor that many newer developments sit on graded pad sites where fill quality varies lot to lot. On historic-district properties we also account for older, sometimes uneven original grading when tying new concrete into existing walkways or foundations.",
-    distanceFraming: "A direct run south on I-65 from our 29th Ave N shop — well within our standard service radius for both consultations and warranty follow-up.",
-    driveTimeMinutes: "25-30 minutes",
+    distanceFraming: "A longer but still standard drive south from our shop near Nashville International Airport via I-40 and I-65 — well within our metro service radius for both consultations and warranty follow-up.",
+    driveTimeMinutes: "30-35 minutes",
     localFaqs: [
       {
         question: "Does our property fall inside Franklin's historic overlay, and does that affect a driveway or patio project?",
@@ -175,8 +175,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Proximity to Old Hickory Lake means many Hendersonville lots deal with higher water tables and more significant grade change down to the shoreline than inland Sumner County properties. We factor drainage and slope stabilization heavily into retaining wall and patio designs near the water.",
-    distanceFraming: "A straightforward drive northeast from our 29th Ave N shop via I-65 and Vietnam Veterans Blvd.",
-    driveTimeMinutes: "30-35 minutes",
+    distanceFraming: "One of the more convenient drives in our service area — a direct trip from our shop near Nashville International Airport via Vietnam Veterans Parkway, given our location's position on the east side of the metro.",
+    driveTimeMinutes: "20-25 minutes",
     localFaqs: [
       {
         question: "Are there special rules for concrete work near the lake shoreline?",
@@ -207,8 +207,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Gallatin shares Sumner County's clay-based soil profile with the added variability of a fast-growing development pattern — newer subdivisions on recently graded land need careful sub-base verification, since fill consistency varies by builder and phase.",
-    distanceFraming: "A direct run northeast from our 29th Ave N shop via I-65 and US-31E — comfortably within our standard service radius.",
-    driveTimeMinutes: "35-40 minutes",
+    distanceFraming: "A direct run northeast from our shop near Nashville International Airport via Vietnam Veterans Parkway and US-31E — comfortably within our standard service radius.",
+    driveTimeMinutes: "30-35 minutes",
     localFaqs: [
       {
         question: "Is Gallatin part of your standard service area, or is there an extra trip charge?",
@@ -239,8 +239,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "East Nashville's dense, older infrastructure means drainage easements and utility placement can be tighter than in newer suburban areas — we verify underground conditions before excavation on tight urban lots, and design driveways and patios with East Nashville's typical narrow side-yard setbacks in mind.",
-    distanceFraming: "A short trip across the Cumberland River from our 29th Ave N shop — one of our faster response areas.",
-    driveTimeMinutes: "10-20 minutes",
+    distanceFraming: "One of our closest service areas — a short trip from our shop near Nashville International Airport via I-40 West or Murfreesboro Pike.",
+    driveTimeMinutes: "10-15 minutes",
     localFaqs: [
       {
         question: "Our house is in a historic district — does that limit what we can do with our driveway?",
@@ -271,8 +271,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Rutherford County's soil and grading conditions vary significantly by subdivision phase and age, since so much of Murfreesboro has been developed recently. We independently verify sub-base compaction on newer lots rather than assuming builder grading is pour-ready, and account for regional clay soil movement in control-joint spacing.",
-    distanceFraming: "A direct drive southeast from our 29th Ave N shop via I-24 — within our standard metro service radius for scheduled work.",
-    driveTimeMinutes: "40-45 minutes",
+    distanceFraming: "One of the more convenient drives in our service area — a quick, direct run southeast from our shop near Nashville International Airport via I-24.",
+    driveTimeMinutes: "20-25 minutes",
     localFaqs: [
       {
         question: "Can you upgrade a standard builder-grade driveway to a decorative finish after move-in?",
@@ -303,8 +303,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Most Gulch projects involve concrete over structural decks or existing slabs rather than new soil-bearing foundations, which shifts the technical focus toward waterproofing, structural load capacity, and finish adhesion rather than traditional sub-base and soil considerations.",
-    distanceFraming: "One of our closest service areas — minutes from our 29th Ave N shop.",
-    driveTimeMinutes: "5-10 minutes",
+    distanceFraming: "A short, direct trip from our shop near Nashville International Airport via I-40 West — minutes to most Gulch addresses.",
+    driveTimeMinutes: "10-15 minutes",
     localFaqs: [
       {
         question: "Can you install polished concrete flooring inside a condo unit or commercial space?",
@@ -335,8 +335,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Downtown's built environment means most projects involve structural concrete, existing foundations, and above-grade slabs rather than native soil conditions. Where ground-level work does interface with soil, downtown's riverside geology near the Cumberland requires careful attention to moisture and grading.",
-    distanceFraming: "A short trip from our 29th Ave N shop — minutes to most downtown addresses.",
-    driveTimeMinutes: "5-10 minutes",
+    distanceFraming: "A short, direct trip from our shop near Nashville International Airport via I-40 West or Murfreesboro Pike — minutes to most downtown addresses.",
+    driveTimeMinutes: "10-15 minutes",
     localFaqs: [
       {
         question: "Do you take on commercial and multi-family concrete projects downtown?",
@@ -367,8 +367,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Smyrna shares Rutherford County's clay-based soil, with drainage patterns influenced by its position along the West Fork Stones River. We assess site-specific drainage carefully on lots near creek corridors before finalizing grading for driveways or patios.",
-    distanceFraming: "A direct drive southeast from our 29th Ave N shop via I-24 — within our standard metro service radius.",
-    driveTimeMinutes: "35-40 minutes",
+    distanceFraming: "One of our closest service areas — a direct, quick run southeast from our shop near Nashville International Airport via I-24.",
+    driveTimeMinutes: "15-20 minutes",
     localFaqs: [
       {
         question: "Do you serve both established Smyrna neighborhoods and the newer subdivisions?",
@@ -399,8 +399,8 @@ export const areas: Area[] = [
     ],
     soilAndClimateNotes:
       "Wilson County's soil profile follows the broader Middle Tennessee clay pattern, with some areas around Lebanon showing more variable drainage due to the region's karst limestone features. We evaluate site-specific soil and drainage conditions rather than assuming uniform conditions across the county.",
-    distanceFraming: "A direct drive east from our 29th Ave N shop via I-40 — at the outer edge of our standard metro service radius, still comfortably served for scheduled consultations and projects.",
-    driveTimeMinutes: "40-45 minutes",
+    distanceFraming: "One of the more convenient drives in our service area — a direct trip east from our shop near Nashville International Airport via I-40, given our location's position on the east side of the metro.",
+    driveTimeMinutes: "20-25 minutes",
     localFaqs: [
       {
         question: "Is Lebanon too far outside Nashville for your team to service?",

@@ -7,17 +7,21 @@ export const siteConfig = {
   phoneHref: "tel:+16153924035",
   email: "info@eliteconcretecontractorsnashville.com",
   address: {
-    street: "110 29th Ave N",
+    street: "402 Bna Dr",
     city: "Nashville",
     state: "TN",
     stateFull: "Tennessee",
-    zip: "37203",
-    full: "110 29th Ave N, Nashville, TN 37203",
+    zip: "37217",
+    full: "402 Bna Dr, Nashville, TN 37217",
   },
+  // Sourced directly from the Google Business Profile map embed (exact pin
+  // location), not an approximation.
   geo: {
-    latitude: 36.15723,
-    longitude: -86.79815,
+    latitude: 36.13774727244346,
+    longitude: -86.70138662419177,
   },
+  mapEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.183410485577!2d-86.70138662419177!3d36.13774727244346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886469fed717b36d%3A0xf6f0e6506d01e843!2sElite%20Concrete%20Contractors%20Of%20Nashville!5e0!3m2!1sen!2sus!4v1787111096113!5m2!1sen!2sus",
   hours: [
     { day: "Monday", open: "07:00", close: "18:00" },
     { day: "Tuesday", open: "07:00", close: "18:00" },

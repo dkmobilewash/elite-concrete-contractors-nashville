@@ -12,6 +12,7 @@ import { services } from "@/data/services";
 import { areas } from "@/data/areas";
 import { faqSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = pageMetadata({
   title: "Premium Concrete Contractor in Nashville, TN",
@@ -103,8 +104,8 @@ export default function Home() {
             <p className="mt-5 text-[var(--color-charcoal)] leading-relaxed">
               Elite Concrete Contractors Of Nashville was founded on a simple premise: Nashville&apos;s finest properties
               deserve a concrete contractor who treats every project — residential or commercial, large or small —
-              with the same engineering discipline and finish standard. We&apos;re headquartered at 110 29th Ave N in
-              Nashville, and our crews work across the full metro area.
+              with the same engineering discipline and finish standard. We&apos;re headquartered at {siteConfig.address.full},
+              and our crews work across the full metro area.
             </p>
             <Link
               href="/about/"

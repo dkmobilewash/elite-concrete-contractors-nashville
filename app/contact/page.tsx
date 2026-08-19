@@ -1,5 +1,6 @@
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import ContactForm from "@/components/ContactForm";
+import MapEmbed from "@/components/MapEmbed";
 import { siteConfig } from "@/lib/site-config";
 import { pageMetadata } from "@/lib/seo";
 
@@ -41,6 +42,7 @@ export default function ContactPage() {
                 <p>{siteConfig.address.full}</p>
                 <p className="text-[var(--color-charcoal)]/80">{siteConfig.hoursDisplay}</p>
               </div>
+              <MapEmbed className="mt-4" />
             </div>
             <div>
               <h2 className="font-heading text-lg font-semibold text-[var(--color-navy)]">What Happens Next</h2>

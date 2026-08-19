@@ -49,6 +49,8 @@ npm run lint
   `components/PageBreadcrumbs.tsx` pairs the visible breadcrumb nav with its `BreadcrumbList` JSON-LD so the two
   can't drift apart. Favicons (`favicon.ico`, 16×16/32×32 PNGs, apple-touch-icon, manifest icons) are static files
   in `public/`, generated from the same navy "E" mark as the wordmark. `app/not-found.tsx` is a branded 404 page.
+- **Map**: `components/MapEmbed.tsx` renders the Google Business Profile map (via `siteConfig.mapEmbedUrl`) on
+  `/contact/`, in a responsive aspect-ratio container so it never overflows on mobile.
 
 ### Activating real review data
 
@@ -68,10 +70,9 @@ the visible Reviews page copy, not schema) once available.
 
 These were explicitly flagged in the build spec as requiring client confirmation rather than assumption:
 
-1. **Shared address**: `110 29th Ave N, Nashville, TN 37203` is also used by a separate, unrelated build spec
-   ("Concrete Pros of Nashville"). If both are real, currently operating businesses at the same address, confirm
-   that's intentional before publishing both — two Google Business Profiles at an identical address can cause
-   local-pack confusion without deliberate differentiation.
+1. ~~**Shared address**~~ — Resolved. The business address is now `402 Bna Dr, Nashville, TN 37217`, matching the
+   real Google Business Profile (the map embed on `/contact/` points at the verified GBP pin), so this no longer
+   overlaps with the address originally flagged for a separate, unrelated build spec.
 2. **No logo file was actually attached to this build session** despite the spec describing one. The header/footer
    currently use an SVG wordmark (`components/Logo.tsx`) recreated from the spec's written description (navy
    "ELITE" italic, charcoal "CONCRETE", navy "CONTRACTORS" with hairline rules, charcoal "OF NASHVILLE"). Swap in
@@ -90,8 +91,17 @@ These were explicitly flagged in the build spec as requiring client confirmation
    (Metro Nashville Codes, City of Franklin Building & Neighborhood Services, City of Brentwood, etc.) but should be
    re-verified against current department names/URLs before publishing, per the spec's instruction not to
    fabricate permit fee figures or department names — none are stated here, only general process descriptions.
-9. **Geo-coordinates** in `lib/site-config.ts` are an approximate estimate for 110 29th Ave N — confirm/replace with
-   exact coordinates before relying on them for local map schema.
+9. ~~**Geo-coordinates**~~ — Resolved. `lib/site-config.ts`'s `geo.latitude`/`geo.longitude` are now the exact
+   coordinates from the real Google Business Profile map embed (not an approximation), also used as
+   `mapEmbedUrl` for the live map on `/contact/`.
+10. **Area drive-time framing was re-estimated, not re-routed**: moving the address from Midtown to near Nashville
+    International Airport (402 Bna Dr) meaningfully changes real driving relationships to every service area —
+    west-side areas (Belle Meade, Forest Hills, Franklin) got noticeably farther, east/southeast areas (East
+    Nashville, Murfreesboro, Smyrna, Lebanon) got noticeably closer. Every area's `distanceFraming` and
+    `driveTimeMinutes` in `data/areas.ts` was rewritten to reflect the new location's real position relative to
+    Nashville's interstate network (I-40, I-24, I-440, I-65), but — same as the original build — these are
+    reasoned estimates, not pulled from a live routing API. Worth a real drive-time check (Google Maps) per area
+    before treating the specific minute ranges as guaranteed.
 
 ## Content depth note
 

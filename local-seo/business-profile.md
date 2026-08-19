@@ -4,13 +4,20 @@ Source of truth for all citation/directory submissions. Use these exact
 strings everywhere — consistency across listings is what builds citation
 authority for local search.
 
+**Address changed 2026** (was `110 29th Ave N, Nashville, TN 37203`, now
+`402 Bna Dr, Nashville, TN 37217`, matching the real Google Business
+Profile). If any directory was already submitted with the old address
+before this change, go back and update it — a mismatched address across
+listings actively weakens the NAP-consistency signal this whole citation
+effort is built on.
+
 | Field | Value |
 |---|---|
 | Business Name | Elite Concrete Contractors Of Nashville |
-| Address | 110 29th Ave N |
+| Address | 402 Bna Dr |
 | City | Nashville |
 | State/Province | TN |
-| ZIP/Postal Code | 37203 |
+| ZIP/Postal Code | 37217 |
 | Country | United States |
 | Phone | (615) 392-4035 |
 | Website | https://www.eliteconcretecontractorsnashville.com |
