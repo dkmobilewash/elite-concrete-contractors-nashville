@@ -5,15 +5,19 @@ import ProcessSteps from "./ProcessSteps";
 import FAQAccordion from "./FAQAccordion";
 import CTASection from "./CTASection";
 import AreaGrid from "./AreaGrid";
+import BlogGrid from "./BlogGrid";
 import PlaceholderImage from "./PlaceholderImage";
 import { Service } from "@/lib/types";
 import { areas } from "@/data/areas";
 import { services } from "@/data/services";
+import { blogPosts } from "@/data/blog";
 
 export default function ServicePageTemplate({ service }: { service: Service }) {
   const related = service.relatedServices
     .map((slug) => services.find((s) => s.slug === slug))
     .filter(Boolean) as Service[];
+
+  const relatedPosts = blogPosts.filter((post) => post.relatedServices.includes(service.slug));
 
   return (
     <>
@@ -110,6 +114,14 @@ export default function ServicePageTemplate({ service }: { service: Service }) {
           </div>
         </div>
       </section>
+
+      {relatedPosts.length > 0 && (
+        <BlogGrid
+          posts={relatedPosts}
+          heading="From the Blog"
+          subheading={`Questions homeowners commonly ask us about ${service.name.toLowerCase()}.`}
+        />
+      )}
 
       <CTASection
         headline={`Request a Consultation for ${service.name}`}

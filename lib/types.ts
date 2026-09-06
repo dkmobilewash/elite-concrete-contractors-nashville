@@ -40,3 +40,26 @@ export type Area = {
   landmarks: string[];
   nearbyAreas: string[];
 };
+
+export type BlogSection = {
+  heading: string;
+  paragraphs: string[];
+};
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  excerpt: string;
+  category: string;
+  publishedDate: string;
+  updatedDate?: string;
+  readTime: string;
+  intro: string[];
+  sections: BlogSection[];
+  faqs?: FAQ[];
+  relatedServices: string[];
+  relatedAreas?: string[];
+  relatedPosts: string[];
+};
+

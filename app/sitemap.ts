@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
 import { areas } from "@/data/areas";
+import { blogPosts } from "@/data/blog";
 import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "contact",
     "portfolio",
     "reviews",
+    "blog",
     "services",
     "service-areas",
     "privacy-policy",
@@ -38,6 +40,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+    });
+  }
+
+  for (const post of blogPosts) {
+    entries.push({
+      url: `${siteConfig.url}/blog/${post.slug}/`,
+      lastModified: new Date(post.updatedDate || post.publishedDate),
+      changeFrequency: "monthly",
+      priority: 0.7,
     });
   }
 

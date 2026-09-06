@@ -3,6 +3,7 @@ import { areas } from "@/data/areas";
 import { Service } from "./types";
 import { Area } from "./types";
 import { FAQ } from "./types";
+import { BlogPost } from "./types";
 
 export function organizationSchema() {
   return {
@@ -80,6 +81,25 @@ export function faqSchema(faqs: FAQ[]) {
         text: f.answer,
       },
     })),
+  };
+}
+
+export function articleSchema(post: BlogPost) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.metaDescription,
+    datePublished: post.publishedDate,
+    dateModified: post.updatedDate || post.publishedDate,
+    author: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
+    publisher: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
+    image: `${siteConfig.url}/opengraph-image`,
+    mainEntityOfPage: `${siteConfig.url}/blog/${post.slug}/`,
   };
 }
 
