@@ -51,6 +51,24 @@ npm run lint
   in `public/`, generated from the same navy "E" mark as the wordmark. `app/not-found.tsx` is a branded 404 page.
 - **Map**: `components/MapEmbed.tsx` renders the Google Business Profile map (via `siteConfig.mapEmbedUrl`) on
   `/contact/`, in a responsive aspect-ratio container so it never overflows on mobile.
+- **Analytics & entity linking**: `components/GoogleAnalytics.tsx` loads GA4 only when
+  `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set — renders nothing otherwise, so dev/preview environments stay silent.
+  `organizationSchema()` in `lib/schema.ts` emits a `sameAs` array built from whichever URLs are populated in
+  `siteConfig.social` (Google Business Profile, Facebook, Instagram, Yelp, Houzz, BBB) — omitted entirely until
+  at least one is set, never a placeholder or guessed URL.
+
+### Activating GA4 and sameAs entity links
+
+Both of these are "off" by default and require real values — same pattern as `realReviewData` below.
+
+- **GA4**: create a property at [analytics.google.com](https://analytics.google.com) if you don't have one, copy
+  its Measurement ID (format `G-XXXXXXXXXX`), and set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel → Settings →
+  Environment Variables, then redeploy. Must be prefixed `NEXT_PUBLIC_` since it's read client-side.
+- **sameAs**: as each business profile (Google Business Profile, Facebook, Instagram, Yelp, Houzz, BBB) gets
+  claimed, add its real URL to the matching field in `siteConfig.social` in `lib/site-config.ts`. Each populated
+  field is automatically included in the homepage's Organization schema on the next deploy — no other code
+  changes needed. Leave a field `""` until that profile genuinely exists; a `sameAs` entry pointing at a
+  non-existent or unclaimed profile actively confuses the entity association this is meant to reinforce.
 
 ### Activating real review data
 

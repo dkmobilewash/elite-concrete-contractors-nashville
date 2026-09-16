@@ -40,6 +40,13 @@ export function organizationSchema() {
       "@type": "City",
       name: `${a.name}, TN`,
     })),
+    // Only includes profiles that are actually populated in
+    // siteConfig.social — never fabricated or guessed URLs. Omitted
+    // entirely (not an empty array) when nothing is populated yet.
+    ...(() => {
+      const sameAs = Object.values(siteConfig.social).filter((url) => url.length > 0);
+      return sameAs.length > 0 ? { sameAs } : {};
+    })(),
     // Only emitted once real review data is set in lib/site-config.ts —
     // never fabricated. See realReviewData for how to activate this.
     ...(realReviewData

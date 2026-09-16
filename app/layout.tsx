@@ -3,7 +3,8 @@ import { Barlow_Semi_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { siteConfig } from "@/lib/site-config";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import { siteConfig, gaMeasurementId } from "@/lib/site-config";
 import { organizationSchema } from "@/lib/schema";
 
 const barlow = Barlow_Semi_Condensed({
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${barlow.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-[var(--foreground)]">
+        <GoogleAnalytics measurementId={gaMeasurementId} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-sm focus:bg-[var(--color-navy)] focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white"

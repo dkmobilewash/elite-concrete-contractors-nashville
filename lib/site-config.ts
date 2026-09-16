@@ -32,10 +32,19 @@ export const siteConfig = {
     { day: "Sunday", closed: true },
   ],
   hoursDisplay: "Mon–Fri: 7:00 AM – 6:00 PM · Sat: 8:00 AM – 2:00 PM · Sun: Closed",
+  // Real profile URLs, once claimed — each populated URL is automatically
+  // added to the Organization schema's `sameAs` array (see lib/schema.ts),
+  // which tells Google these profiles and the website are the same business
+  // entity. Leave a field "" until that profile actually exists; a sameAs
+  // entry pointing at a non-existent or unclaimed profile does more harm
+  // than leaving it out.
   social: {
+    googleBusinessProfile: "",
     facebook: "",
     instagram: "",
+    yelp: "",
     houzz: "",
+    bbb: "",
   },
   founded: 2011,
   tagline: "Precision concrete craftsmanship for Nashville's finest properties.",
@@ -46,6 +55,16 @@ export const NOTE_PLACEHOLDER_STATS = {
   reviewCount: "180+",
   yearsExperience: `${new Date().getFullYear() - siteConfig.founded}+`,
 };
+
+/**
+ * Google Analytics 4 Measurement ID (format "G-XXXXXXXXXX"), read from an
+ * env var rather than hardcoded so it's easy to set per-environment and
+ * never accidentally fires in local dev. Set NEXT_PUBLIC_GA_MEASUREMENT_ID
+ * in Vercel → Settings → Environment Variables and redeploy; app/layout.tsx
+ * only renders the GA script tags when this is present.
+ */
+export const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "";
+
 
 /**
  * Real Google review data, once available. Deliberately `null` until real
