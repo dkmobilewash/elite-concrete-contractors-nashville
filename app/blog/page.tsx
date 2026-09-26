@@ -30,7 +30,11 @@ export default function BlogIndexPage() {
         </div>
       </section>
 
-      <BlogGrid posts={sortedPosts} />
+      <BlogGrid
+        posts={sortedPosts}
+        heading="Latest Articles"
+        subheading="Real answers to the questions Nashville homeowners search before hiring a concrete contractor."
+      />
 
       <CTASection
         headline="Have a Question We Haven't Answered?"

@@ -36,19 +36,24 @@ export default function PortfolioPage() {
       </section>
 
       <section className="section-y">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featured.map((p, i) => (
-            <div key={i}>
-              <PlaceholderImage
-                label={p.label}
-                alt={`${p.label} — ${p.service.name} project in ${p.area.name}, TN by Elite Concrete Contractors Of Nashville`}
-              />
-              <h3 className="mt-3 font-heading text-base font-semibold text-[var(--color-navy)]">{p.label}</h3>
-              <p className="text-sm text-[var(--color-charcoal)]">
-                {p.service.name} &middot; {p.area.name}, TN
-              </p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="font-heading text-3xl font-bold text-[var(--color-navy)] mb-8">
+            Recent Projects
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featured.map((p, i) => (
+              <div key={i}>
+                <PlaceholderImage
+                  label={p.label}
+                  alt={`${p.label} — ${p.service.name} project in ${p.area.name}, TN by Elite Concrete Contractors Of Nashville`}
+                />
+                <h3 className="mt-3 font-heading text-base font-semibold text-[var(--color-navy)]">{p.label}</h3>
+                <p className="text-sm text-[var(--color-charcoal)]">
+                  {p.service.name} &middot; {p.area.name}, TN
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

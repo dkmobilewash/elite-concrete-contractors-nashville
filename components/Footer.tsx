@@ -21,6 +21,11 @@ export default function Footer() {
                   {siteConfig.phone}
                 </a>
               </p>
+              <p>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-white">
+                  {siteConfig.email}
+                </a>
+              </p>
               <p className="text-white/60">{siteConfig.hoursDisplay}</p>
             </div>
           </div>

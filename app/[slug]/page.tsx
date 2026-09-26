@@ -20,7 +20,7 @@ export async function generateMetadata({
   const service = services.find((s) => s.slug === slug);
   if (service) {
     return pageMetadata({
-      title: service.name,
+      title: `${service.name} in Nashville, TN`,
       description: `${service.shortDescription} Serving the Nashville metro area with precision craftsmanship. Call (615) 392-4035.`,
       path: `/${service.slug}/`,
     });

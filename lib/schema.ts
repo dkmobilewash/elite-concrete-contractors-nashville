@@ -1,5 +1,6 @@
 import { siteConfig, realReviewData } from "./site-config";
 import { areas } from "@/data/areas";
+import { services } from "@/data/services";
 import { Service } from "./types";
 import { Area } from "./types";
 import { FAQ } from "./types";
@@ -40,6 +41,18 @@ export function organizationSchema() {
       "@type": "City",
       name: `${a.name}, TN`,
     })),
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Concrete Services",
+      itemListElement: services.map((s) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: s.name,
+          description: s.shortDescription,
+        },
+      })),
+    },
     // Only includes profiles that are actually populated in
     // siteConfig.social — never fabricated or guessed URLs. Omitted
     // entirely (not an empty array) when nothing is populated yet.
