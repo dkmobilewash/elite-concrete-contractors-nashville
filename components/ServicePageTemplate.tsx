@@ -21,6 +21,7 @@ const serviceImages: Partial<Record<string, string>> = {
   "concrete-flooring": "/images/services/concrete-flooring-pole-barn.webp",
   "foundation-installation": "/images/services/foundation-installation-slab-pad.webp",
   "concrete-driveways": "/images/services/concrete-driveways-new-construction.webp",
+  "stamped-concrete": "/images/services/stamped-concrete-steps-tooling.webp",
 };
 
 export default function ServicePageTemplate({ service }: { service: Service }) {
