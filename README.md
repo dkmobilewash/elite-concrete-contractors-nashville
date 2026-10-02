@@ -59,16 +59,15 @@ npm run lint
 
 ### Activating GA4 and sameAs entity links
 
-Both of these are "off" by default and require real values — same pattern as `realReviewData` below.
-
-- **GA4**: create a property at [analytics.google.com](https://analytics.google.com) if you don't have one, copy
-  its Measurement ID (format `G-XXXXXXXXXX`), and set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel → Settings →
-  Environment Variables, then redeploy. Must be prefixed `NEXT_PUBLIC_` since it's read client-side.
-- **sameAs**: as each business profile (Google Business Profile, Facebook, Instagram, Yelp, Houzz, BBB) gets
-  claimed, add its real URL to the matching field in `siteConfig.social` in `lib/site-config.ts`. Each populated
-  field is automatically included in the homepage's Organization schema on the next deploy — no other code
-  changes needed. Leave a field `""` until that profile genuinely exists; a `sameAs` entry pointing at a
-  non-existent or unclaimed profile actively confuses the entity association this is meant to reinforce.
+- **GA4**: live. `NEXT_PUBLIC_GA_MEASUREMENT_ID` is set in Vercel → Settings → Environment Variables
+  (Production + Preview). To change it later, update the value there and redeploy — it's read client-side at
+  build time, so a new build is required for a change to take effect.
+- **sameAs**: Facebook, Instagram, and Yelp are live in `siteConfig.social` in `lib/site-config.ts`. Google
+  Business Profile, Houzz, and BBB remain `""` pending a stable permalink for each (not a Google Maps search
+  URL with session-tied tracking parameters, which can expire) — add the real URL to the matching field once
+  available and it's included in the homepage's Organization schema automatically on the next deploy. Leave a
+  field `""` until that profile genuinely exists; a `sameAs` entry pointing at a non-existent or unclaimed
+  profile actively confuses the entity association this is meant to reinforce.
 
 ### Activating real review data
 
