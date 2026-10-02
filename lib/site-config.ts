@@ -39,7 +39,7 @@ export const siteConfig = {
   // entry pointing at a non-existent or unclaimed profile does more harm
   // than leaving it out.
   social: {
-    googleBusinessProfile: "",
+    googleBusinessProfile: "https://maps.google.com/?cid=17793975360841443395",
     facebook: "https://www.facebook.com/profile.php?id=61593573290411",
     instagram: "https://www.instagram.com/eliteconcretenashville",
     yelp: "https://www.yelp.com/biz/elite-concrete-contractors-of-nashville-nashville-davidson-metropolitan-government-balance",
