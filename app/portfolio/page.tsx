@@ -17,7 +17,7 @@ const featured = [
   { service: services[9], area: areas[2], label: "Terraced Retaining Wall & Patio" },
   { service: services[6], area: areas[9], label: "Polished Concrete Interior Flooring" },
   { service: services[0], area: areas[4], label: "Estate Driveway Replacement", image: "/images/portfolio/estate-driveway-replacement.webp" },
-  { service: services[5], area: areas[3], label: "Garden Walkway System" },
+  { service: services[5], area: areas[3], label: "Garden Walkway System", image: "/images/portfolio/garden-walkway-system.webp" },
   { service: services[10], area: areas[6], label: "Slab Foundation, New Construction", image: "/images/portfolio/slab-foundation-new-construction.webp" },
 ];
 

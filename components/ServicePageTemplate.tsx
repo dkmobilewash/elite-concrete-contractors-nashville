@@ -17,6 +17,10 @@ import { blogPosts } from "@/data/blog";
 // placeholder box in PlaceholderImage.
 const serviceImages: Partial<Record<string, string>> = {
   "slab-foundations": "/images/services/slab-foundation-rebar-prep.webp",
+  "concrete-sidewalks": "/images/services/concrete-sidewalks-commercial-walkway.webp",
+  "concrete-flooring": "/images/services/concrete-flooring-pole-barn.webp",
+  "foundation-installation": "/images/services/foundation-installation-slab-pad.webp",
+  "concrete-driveways": "/images/services/concrete-driveways-new-construction.webp",
 };
 
 export default function ServicePageTemplate({ service }: { service: Service }) {
