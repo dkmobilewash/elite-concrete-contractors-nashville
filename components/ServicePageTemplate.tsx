@@ -12,6 +12,13 @@ import { areas } from "@/data/areas";
 import { services } from "@/data/services";
 import { blogPosts } from "@/data/blog";
 
+// Real project photography, added incrementally as photos become available.
+// Keyed by service slug; services without an entry fall back to the
+// placeholder box in PlaceholderImage.
+const serviceImages: Partial<Record<string, string>> = {
+  "slab-foundations": "/images/services/slab-foundation-rebar-prep.webp",
+};
+
 export default function ServicePageTemplate({ service }: { service: Service }) {
   const related = service.relatedServices
     .map((slug) => services.find((s) => s.slug === slug))
@@ -37,6 +44,7 @@ export default function ServicePageTemplate({ service }: { service: Service }) {
               label={`${service.name} project example`}
               alt={`${service.name} project by Elite Concrete Contractors Of Nashville`}
               aspect="aspect-[3/4]"
+              src={serviceImages[service.slug]}
             />
           </div>
         </div>

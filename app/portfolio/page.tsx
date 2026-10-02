@@ -13,12 +13,12 @@ export const metadata = pageMetadata({
 });
 
 const featured = [
-  { service: services[11], area: areas[0], label: "Stamped Motor Court" },
-  { service: services[10], area: areas[2], label: "Terraced Retaining Wall & Patio" },
+  { service: services[11], area: areas[0], label: "Stamped Motor Court", image: "/images/portfolio/stamped-motor-court.webp" },
+  { service: services[9], area: areas[2], label: "Terraced Retaining Wall & Patio" },
   { service: services[6], area: areas[9], label: "Polished Concrete Interior Flooring" },
-  { service: services[0], area: areas[4], label: "Estate Driveway Replacement" },
+  { service: services[0], area: areas[4], label: "Estate Driveway Replacement", image: "/images/portfolio/estate-driveway-replacement.webp" },
   { service: services[5], area: areas[3], label: "Garden Walkway System" },
-  { service: services[9], area: areas[6], label: "Slab Foundation, New Construction" },
+  { service: services[10], area: areas[6], label: "Slab Foundation, New Construction", image: "/images/portfolio/slab-foundation-new-construction.webp" },
 ];
 
 export default function PortfolioPage() {
@@ -46,6 +46,7 @@ export default function PortfolioPage() {
                 <PlaceholderImage
                   label={p.label}
                   alt={`${p.label} — ${p.service.name} project in ${p.area.name}, TN by Elite Concrete Contractors Of Nashville`}
+                  src={p.image}
                 />
                 <h3 className="mt-3 font-heading text-base font-semibold text-[var(--color-navy)]">{p.label}</h3>
                 <p className="text-sm text-[var(--color-charcoal)]">
