@@ -40,9 +40,9 @@ export const siteConfig = {
   // than leaving it out.
   social: {
     googleBusinessProfile: "",
-    facebook: "",
-    instagram: "",
-    yelp: "",
+    facebook: "https://www.facebook.com/profile.php?id=61593573290411",
+    instagram: "https://www.instagram.com/eliteconcretenashville",
+    yelp: "https://www.yelp.com/biz/elite-concrete-contractors-of-nashville-nashville-davidson-metropolitan-government-balance",
     houzz: "",
     bbb: "",
   },
