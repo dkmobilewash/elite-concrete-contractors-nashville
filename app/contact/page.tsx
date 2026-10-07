@@ -5,9 +5,9 @@ import { siteConfig } from "@/lib/site-config";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact Us / Request a Consultation",
+  title: "Contact Us | Free Concrete Consultation in Nashville, TN",
   description:
-    "Request a consultation with Elite Concrete Contractors Of Nashville. Call (615) 392-4035 or fill out our project form to schedule a design consultation for your Nashville-area concrete project.",
+    "Request a free consultation with Elite Concrete Contractors Of Nashville. Call (615) 392-4035 or fill out our project form to schedule a design consultation for your Nashville-area concrete project.",
   path: "/contact/",
 });
 
