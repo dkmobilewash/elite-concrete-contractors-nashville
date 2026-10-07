@@ -8,11 +8,14 @@ import PlaceholderImage from "./PlaceholderImage";
 import { Area } from "@/lib/types";
 import { services } from "@/data/services";
 import { areas } from "@/data/areas";
+import { getPortfolioProjectsByArea } from "@/data/portfolio";
 
 export default function AreaPageTemplate({ area }: { area: Area }) {
   const nearby = area.nearbyAreas
     .map((slug) => areas.find((a) => a.slug === slug))
     .filter(Boolean) as Area[];
+  const localProjects = getPortfolioProjectsByArea(area.slug);
+  const featuredProject = localProjects[0];
 
   return (
     <>
@@ -40,10 +43,31 @@ export default function AreaPageTemplate({ area }: { area: Area }) {
           </div>
           <div className="space-y-6">
             <PlaceholderImage
-              label={`${area.name} project example`}
-              alt={`Concrete project in ${area.name}, TN by Elite Concrete Contractors Of Nashville`}
+              label={featuredProject ? featuredProject.label : `${area.name} project example`}
+              alt={
+                featuredProject
+                  ? `${featuredProject.label} — ${featuredProject.service.name} project in ${area.name}, TN by Elite Concrete Contractors Of Nashville`
+                  : `Concrete project in ${area.name}, TN by Elite Concrete Contractors Of Nashville`
+              }
               aspect="aspect-[3/4]"
+              src={featuredProject?.image}
             />
+            {featuredProject && (
+              <div className="rounded-sm border border-[var(--color-hairline)] p-5">
+                <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-[var(--color-navy)]">
+                  Completed Project in {area.name}
+                </h3>
+                <p className="mt-2 text-sm text-[var(--color-charcoal)]">
+                  {featuredProject.label} — {featuredProject.service.name.toLowerCase()} for a {area.name} property.
+                </p>
+                <Link
+                  href="/portfolio/"
+                  className="mt-2 inline-block text-sm font-semibold text-[var(--color-navy)] underline underline-offset-4"
+                >
+                  See more completed projects →
+                </Link>
+              </div>
+            )}
             <div className="rounded-sm border border-[var(--color-hairline)] p-5">
               <h3 className="font-heading text-sm font-semibold uppercase tracking-wide text-[var(--color-navy)]">
                 From Our Shop

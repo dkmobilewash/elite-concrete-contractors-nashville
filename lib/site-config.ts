@@ -51,8 +51,6 @@ export const siteConfig = {
 } as const;
 
 export const NOTE_PLACEHOLDER_STATS = {
-  reviewRating: "4.9",
-  reviewCount: "180+",
   yearsExperience: `${new Date().getFullYear() - siteConfig.founded}+`,
 };
 

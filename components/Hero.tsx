@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { siteConfig, NOTE_PLACEHOLDER_STATS } from "@/lib/site-config";
+import { siteConfig, NOTE_PLACEHOLDER_STATS, realReviewData } from "@/lib/site-config";
 
 type HeroProps = {
   eyebrow?: string;
@@ -56,7 +56,11 @@ export default function Hero({
 
         {showTrustStrip && (
           <div className="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl border-t border-white/15 pt-8">
-            <TrustItem value={`${NOTE_PLACEHOLDER_STATS.reviewRating}★`} label={`${NOTE_PLACEHOLDER_STATS.reviewCount} Google Reviews`} />
+            {realReviewData ? (
+              <TrustItem value={`${realReviewData.ratingValue}★`} label={`${realReviewData.reviewCount} Google Reviews`} />
+            ) : (
+              <TrustItem value="13" label="Concrete Specialties" />
+            )}
             <TrustItem value={NOTE_PLACEHOLDER_STATS.yearsExperience} label="Years of Craftsmanship" />
             <TrustItem value="Licensed" label="& Fully Insured" />
             <TrustItem value="Nashville" label="Metro-Wide Service" />

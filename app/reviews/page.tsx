@@ -1,7 +1,7 @@
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
-import { NOTE_PLACEHOLDER_STATS } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -19,9 +19,19 @@ export default function ReviewsPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <h1 className="font-heading text-4xl sm:text-5xl font-bold">Client Reviews</h1>
           <p className="mt-5 max-w-2xl text-white/80 leading-relaxed">
-            A {NOTE_PLACEHOLDER_STATS.reviewRating}-star average across {NOTE_PLACEHOLDER_STATS.reviewCount} Google
-            reviews — figures to be confirmed and linked directly to our Google Business Profile at launch.
+            Read what Nashville-area clients say about working with us, directly on our Google Business Profile —
+            or see a few of their stories below.
           </p>
+          {siteConfig.social.googleBusinessProfile && (
+            <a
+              href={siteConfig.social.googleBusinessProfile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-sm bg-white px-6 py-3 text-sm font-semibold text-[var(--color-navy)] hover:bg-white/90"
+            >
+              Read Our Google Reviews →
+            </a>
+          )}
         </div>
       </section>
 

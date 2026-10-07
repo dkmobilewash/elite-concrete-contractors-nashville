@@ -1,8 +1,7 @@
 import PageBreadcrumbs from "@/components/PageBreadcrumbs";
 import CTASection from "@/components/CTASection";
 import PlaceholderImage from "@/components/PlaceholderImage";
-import { services } from "@/data/services";
-import { areas } from "@/data/areas";
+import { getPortfolioProjects } from "@/data/portfolio";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -12,19 +11,7 @@ export const metadata = pageMetadata({
   path: "/portfolio/",
 });
 
-const featured = [
-  { service: services[11], area: areas[0], label: "Stamped Motor Court", image: "/images/portfolio/stamped-motor-court.webp" },
-  { service: services[9], area: areas[2], label: "Terraced Retaining Wall & Patio" },
-  { service: services[6], area: areas[9], label: "Polished Concrete Interior Flooring" },
-  { service: services[0], area: areas[4], label: "Estate Driveway Replacement", image: "/images/portfolio/estate-driveway-replacement.webp" },
-  { service: services[5], area: areas[3], label: "Garden Walkway System", image: "/images/portfolio/garden-walkway-system.webp" },
-  { service: services[10], area: areas[6], label: "Slab Foundation, New Construction", image: "/images/portfolio/slab-foundation-new-construction.webp" },
-  { service: services[11], area: areas[1], label: "Covered Patio & Entry Steps", image: "/images/portfolio/covered-patio-entry-steps.webp" },
-  { service: services[11], area: areas[5], label: "Backyard Patio Installation", image: "/images/portfolio/backyard-patio-installation.webp" },
-  { service: services[11], area: areas[8], label: "Pool Deck Slab", image: "/images/portfolio/pool-deck-slab.webp" },
-  { service: services[5], area: areas[7], label: "Historic Home Walkway", image: "/images/portfolio/historic-home-walkway.webp" },
-  { service: services[0], area: areas[11], label: "Two-Tone Diamond Driveway", image: "/images/portfolio/two-tone-diamond-driveway.webp" },
-];
+const featured = getPortfolioProjects();
 
 export default function PortfolioPage() {
   return (

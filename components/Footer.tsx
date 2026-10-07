@@ -28,6 +28,38 @@ export default function Footer() {
               </p>
               <p className="text-white/60">{siteConfig.hoursDisplay}</p>
             </div>
+            <div className="mt-6 flex flex-wrap gap-4 text-sm">
+              {siteConfig.social.googleBusinessProfile && (
+                <a href={siteConfig.social.googleBusinessProfile} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                  Google
+                </a>
+              )}
+              {siteConfig.social.facebook && (
+                <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                  Facebook
+                </a>
+              )}
+              {siteConfig.social.instagram && (
+                <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                  Instagram
+                </a>
+              )}
+              {siteConfig.social.yelp && (
+                <a href={siteConfig.social.yelp} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                  Yelp
+                </a>
+              )}
+              {siteConfig.social.houzz && (
+                <a href={siteConfig.social.houzz} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                  Houzz
+                </a>
+              )}
+              {siteConfig.social.bbb && (
+                <a href={siteConfig.social.bbb} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white">
+                  BBB
+                </a>
+              )}
+            </div>
           </div>
 
           <div>

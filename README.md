@@ -79,9 +79,9 @@ Console manual action. Once you have real Google numbers, set:
 export const realReviewData = { ratingValue: 4.9, reviewCount: 187 };
 ```
 
-and the homepage `LocalBusiness` schema will start including the rating automatically — no other code changes
-needed. The same real numbers should also replace `NOTE_PLACEHOLDER_STATS.reviewRating` / `reviewCount` (used in
-the visible Reviews page copy, not schema) once available.
+and the homepage `LocalBusiness` schema will start including the rating automatically. `components/Hero.tsx`'s
+trust strip also switches automatically — it shows the real rating/review count once `realReviewData` is set,
+and a neutral, factual stat ("13 Concrete Specialties") until then — so no other code changes are needed.
 
 ## Open items to confirm with the client (see build spec Section 12)
 
