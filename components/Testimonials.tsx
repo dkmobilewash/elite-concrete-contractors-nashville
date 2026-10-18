@@ -13,17 +13,18 @@ export default function Testimonials() {
             Client Reviews
           </h2>
           <p className="mt-4 text-[var(--color-charcoal)] leading-relaxed">
-            Real client testimonials are being compiled from our Google Business Profile and will replace these placeholders at launch.
+            Real client testimonials are being compiled from our Google Business Profile and will replace these
+            placeholders as they come in.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {placeholders.map((p) => (
-            <div key={p.area} className="rounded-sm border border-[var(--color-hairline)] bg-white p-6">
-              <div className="text-[var(--color-navy)] text-lg tracking-wide mb-3" aria-hidden="true">
-                ★★★★★
-              </div>
+            <div key={p.area} className="rounded-sm border border-dashed border-[var(--color-hairline)] bg-white p-6">
+              <p className="text-[10px] font-semibold uppercase tracking-wide text-[var(--color-charcoal)]/60 mb-3">
+                Testimonial Pending
+              </p>
               <p className="text-sm text-[var(--color-charcoal)] leading-relaxed italic">
-                &ldquo;Placeholder review pending — client testimonial for a {p.service.toLowerCase()} project in {p.area} to be added at launch.&rdquo;
+                &ldquo;Placeholder review pending — client testimonial for a {p.service.toLowerCase()} project in {p.area} to be added here once collected.&rdquo;
               </p>
               <p className="mt-4 text-xs font-semibold text-[var(--color-navy)]">
                 {p.area} Client &middot; {p.service}

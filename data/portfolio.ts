@@ -48,3 +48,16 @@ export function getPortfolioProjects(): ResolvedPortfolioProject[] {
 export function getPortfolioProjectsByArea(areaSlug: string): ResolvedPortfolioProject[] {
   return getPortfolioProjects().filter((p) => p.area.slug === areaSlug && p.image);
 }
+
+// Real project photography for service hub page overview sections, added
+// incrementally. Keyed by service slug; services without an entry fall back
+// to the placeholder box in PlaceholderImage. Single source of truth, also
+// used by app/sitemap.ts to build image sitemap entries.
+export const serviceImages: Partial<Record<string, string>> = {
+  "slab-foundations": "/images/services/slab-foundation-rebar-prep.webp",
+  "concrete-sidewalks": "/images/services/concrete-sidewalks-commercial-walkway.webp",
+  "concrete-flooring": "/images/services/concrete-flooring-pole-barn.webp",
+  "foundation-installation": "/images/services/foundation-installation-slab-pad.webp",
+  "concrete-driveways": "/images/services/concrete-driveways-new-construction.webp",
+  "stamped-concrete": "/images/services/stamped-concrete-steps-tooling.webp",
+};

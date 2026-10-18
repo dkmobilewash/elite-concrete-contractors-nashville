@@ -11,18 +11,7 @@ import { Service } from "@/lib/types";
 import { areas } from "@/data/areas";
 import { services } from "@/data/services";
 import { blogPosts } from "@/data/blog";
-
-// Real project photography, added incrementally as photos become available.
-// Keyed by service slug; services without an entry fall back to the
-// placeholder box in PlaceholderImage.
-const serviceImages: Partial<Record<string, string>> = {
-  "slab-foundations": "/images/services/slab-foundation-rebar-prep.webp",
-  "concrete-sidewalks": "/images/services/concrete-sidewalks-commercial-walkway.webp",
-  "concrete-flooring": "/images/services/concrete-flooring-pole-barn.webp",
-  "foundation-installation": "/images/services/foundation-installation-slab-pad.webp",
-  "concrete-driveways": "/images/services/concrete-driveways-new-construction.webp",
-  "stamped-concrete": "/images/services/stamped-concrete-steps-tooling.webp",
-};
+import { serviceImages } from "@/data/portfolio";
 
 export default function ServicePageTemplate({ service }: { service: Service }) {
   const related = service.relatedServices

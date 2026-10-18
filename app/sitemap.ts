@@ -3,6 +3,7 @@ import { services } from "@/data/services";
 import { areas } from "@/data/areas";
 import { blogPosts } from "@/data/blog";
 import { siteConfig } from "@/lib/site-config";
+import { getPortfolioProjects, getPortfolioProjectsByArea, serviceImages } from "@/data/portfolio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -23,23 +24,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
     priority: route === "" ? 1 : 0.7,
+    ...(route === "portfolio"
+      ? {
+          images: getPortfolioProjects()
+            .filter((p) => p.image)
+            .map((p) => `${siteConfig.url}${p.image}`),
+        }
+      : {}),
   }));
 
   for (const service of services) {
+    const image = serviceImages[service.slug];
     entries.push({
       url: `${siteConfig.url}/${service.slug}/`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+      ...(image ? { images: [`${siteConfig.url}${image}`] } : {}),
     });
   }
 
   for (const area of areas) {
+    const localProject = getPortfolioProjectsByArea(area.slug)[0];
     entries.push({
       url: `${siteConfig.url}/${area.slug}/`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
+      ...(localProject?.image ? { images: [`${siteConfig.url}${localProject.image}`] } : {}),
     });
   }
 
